@@ -1,18 +1,22 @@
-import Head from 'next/head'
-import React from 'react'
+import About from '@components/About';
+import Home from '@components/Home';
+import Head from 'next/head';
 
-export default function Home() {
+const App = () => {
   return (
-    <div className="container">
+    <div className="home">
       <Head>
         <title>LevTheDev | Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
-        
+        <Home />
+        <About />
       </main>
 
     </div>
   )
 }
+
+export default App;

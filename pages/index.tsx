@@ -1,5 +1,6 @@
 import About from '@components/About';
 import Home from '@components/Home';
+import Navbar from '@components/Navbar';
 import Head from 'next/head';
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <Navbar />
       <main>
         <Home />
         <About />

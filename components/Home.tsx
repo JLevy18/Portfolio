@@ -7,32 +7,38 @@ const Home = () => {
 
                 <div className='header-container'>
                     <Image
-                        src="/Logo_6.png"
+                        src="/assets/Logo_6.png"
                         alt="Title"
-                        fill={true}
+                        layout="responsive"
+                        width={2636}
+                        height={746}
+                        className='object-contain drop-shadow-md'
                     />
                 </div>
-
+             
                 <div className='profile-container'>
                     <div className='profile-img-container'>
                         <Image
-                            src="/Profile_Circle.png"
+                            src="/assets/Profile_Circle.png"
                             alt="Profile"
                             fill={true}
                         />
                     </div>
                     <div className='greeting-container'>
-                        <p>Hey There! I'm Justin, aka, LevTheDev.</p>
-                        <p>Hey There! I'm Justin, aka, LevTheDev.</p>
-                        <p>Hey There! I'm Justin, aka, LevTheDev.</p>
-                        <p>Hey There! I'm Justin, aka, LevTheDev.</p>
+                        <div className='message-container'>
+                            <p className='-ml-4'>Hey There! My name is Justin, also known as, LevTheDev.</p>
+                            <p className='ml-1'>I'm a passionate Software Engineer who loves bringing ideas to life.</p>
+                            <p className='ml-3'>When I'm not working, you can find me enjoying various online games</p>
+                            <p className='ml-1'>with friends or exploring one of my many project ideas. You can follow</p>
+                            <p className='-ml-4'>the development of my projects as they progress on YouTube!</p>
+                        </div>
                     </div>
                 </div>
 
                 <div className='socials-container'>
                     <div className='icon-container'>
                         <Image
-                            src="/socials/github.svg"
+                            src="/assets/socials/github.svg"
                             alt="Github"
                             fill={true}
                             className='github'
@@ -40,7 +46,7 @@ const Home = () => {
                     </div>
                     <div className='icon-container'>
                         <Image
-                            src="/socials/linkedin.svg"
+                            src="/assets/socials/linkedin.svg"
                             alt="Linkedin"
                             fill={true}
                             className='github'
@@ -48,7 +54,7 @@ const Home = () => {
                     </div>
                     <div className='icon-container'>
                         <Image
-                            src="/socials/youtube.svg"
+                            src="/assets/socials/youtube.svg"
                             alt="YouTube"
                             fill={true}
                             className='github'
@@ -56,7 +62,7 @@ const Home = () => {
                     </div>
                     <div className='icon-container'>
                         <Image
-                            src="/socials/patreon.svg"
+                            src="/assets/socials/patreon.svg"
                             alt="Patreon"
                             fill={true}
                             className='github'

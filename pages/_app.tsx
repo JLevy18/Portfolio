@@ -1,4 +1,5 @@
 import '@styles/globals.css'
+import '@styles/navbar.css'
 import React from 'react'
 
 function Application({ Component, pageProps }) {

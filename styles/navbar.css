@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Carelia';
+    src: local('Carelia Upright'), local('Carelia-Upright'),
+        url('/fonts/Carelia-Upright.woff2') format('woff2'),
+        url('/fonts/Carelia-Upright.woff') format('woff'),
+        url('/fonts/Carelia-Upright.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.navbar-item {
+    font-family: 'Carelia', sans-serif;
+}
+
+.navbar-text::after {
+    content: '';
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+@layer base {
+    .navbar-container {
+        @apply fixed z-50 w-full h-[8%] flex justify-end items-center px-16
+    }
+
+    .navbar-item {
+        @apply text-2xl tracking-wider px-5 text-[#32312F]
+    }
+
+    .navbar-text {
+        @apply inline-block relative
+    }
+
+    .navbar-text::after {
+        @apply absolute w-0 h-0.5 -bottom-1 left-1/2 bg-[#32312F]
+    }
+
+    .navbar-item:hover {
+        @apply cursor-pointer
+    }
+
+    .navbar-text:hover::after {
+        width: 100%;
+        left: 0;
+    }
+
+}

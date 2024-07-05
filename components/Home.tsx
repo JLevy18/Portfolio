@@ -1,27 +1,38 @@
 import Image from 'next/image'
+import { useEffect } from 'react';
 
 const Home = () => {
+
+    useEffect(() => {
+        const homeContainer = document.querySelector('.home-container');
+        setTimeout(() => {
+            homeContainer.classList.add('loaded');
+        }, 3000); // Adjust the delay as needed
+    }, []);
+
+
     return (
         <div className="home-container">
             <div className='content-container'>
 
                 <div className='header-container'>
                     <Image
-                        src="/assets/Logo_6.png"
+                        src="/assets/Header.png"
                         alt="Title"
-                        layout="responsive"
                         width={2636}
                         height={746}
+                        loading='eager'
                         className='object-contain drop-shadow-md'
                     />
                 </div>
-             
+
                 <div className='profile-container'>
                     <div className='profile-img-container'>
                         <Image
-                            src="/assets/Profile_Circle.png"
-                            alt="Profile"
+                            src="/assets/Profile_Front.png"
+                            alt="ProfileFront"
                             fill={true}
+                            loading='eager'
                         />
                     </div>
                     <div className='greeting-container'>
@@ -36,7 +47,7 @@ const Home = () => {
                 </div>
 
                 <div className='socials-container'>
-                    <div className='icon-container'>
+                    <div className='icon-container' onClick={() => { window.open('https://www.github.com/JLevy18', "_blank") }}>
                         <Image
                             src="/assets/socials/github.svg"
                             alt="Github"
@@ -44,7 +55,7 @@ const Home = () => {
                             className='github'
                         />
                     </div>
-                    <div className='icon-container'>
+                    <div className='icon-container' onClick={() => { window.open('https://www.linkedin.com/in/jlevy18/', "_blank") }}>
                         <Image
                             src="/assets/socials/linkedin.svg"
                             alt="Linkedin"
@@ -52,7 +63,7 @@ const Home = () => {
                             className='github'
                         />
                     </div>
-                    <div className='icon-container'>
+                    <div className='icon-container' onClick={() => { window.open('https://www.youtube.com/channel/UCm3dXeDpEoPABhIPs9EkBrg', "_blank") }}>
                         <Image
                             src="/assets/socials/youtube.svg"
                             alt="YouTube"
@@ -60,7 +71,7 @@ const Home = () => {
                             className='github'
                         />
                     </div>
-                    <div className='icon-container'>
+                    <div className='icon-container' onClick={() => { window.open('https://www.patreon.com/LevTheDev', "_blank") }}>
                         <Image
                             src="/assets/socials/patreon.svg"
                             alt="Patreon"

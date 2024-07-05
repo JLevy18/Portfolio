@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Carelia';
+  src: local('Carelia Upright'), local('Carelia-Upright'),
+    url('/fonts/Carelia-Upright.woff2') format('woff2'),
+    url('/fonts/Carelia-Upright.woff') format('woff'),
+    url('/fonts/Carelia-Upright.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@layer base {
+  .home-container {
+    @apply relative h-screen w-full flex justify-center overflow-hidden
+  }
+
+  .content-container {
+    @apply flex flex-col items-center select-none;
+  }
+
+  .header-container {
+    @apply relative w-1/3 h-min flex mt-20
+  }
+
+  .profile-container {
+    @apply flex my-10
+  }
+
+  .profile-img-container {
+    @apply w-72 h-72 relative perspective-1000
+  }
+
+  .greeting-container {
+    @apply mx-5 flex items-center
+  }
+
+  .message-container p {
+    @apply text-xl py-3 text-[#32312F];
+
+    font-family: 'Carelia', sans-serif;
+  }
+
+  .socials-container {
+    @apply w-full mt-10 flex items-center justify-center
+  }
+
+  .icon-container {
+    @apply w-14 h-14 relative mx-14 select-all transition-all ease-in-out
+  }
+
+  .icon-container:hover {
+    @apply scale-125 drop-shadow-md cursor-pointer
+  }
+
+  .about-container {
+    @apply bg-[#867F6C] h-screen -my-20 rounded-t-3xl z-10
+  }
+}

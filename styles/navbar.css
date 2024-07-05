@@ -31,7 +31,7 @@
     }
 
     .navbar-text {
-        @apply inline-block relative
+        @apply inline-block relative select-none
     }
 
     .navbar-text::after {

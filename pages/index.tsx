@@ -1,5 +1,5 @@
 import About from '@components/About';
-import Home from '@components/Home';
+import Hero from '@components/Hero';
 import Navbar from '@components/Navbar';
 import Head from 'next/head';
 
@@ -13,7 +13,7 @@ const App = () => {
 
       <Navbar />
       <main>
-        <Home />
+        <Hero />
         <About />
       </main>
 

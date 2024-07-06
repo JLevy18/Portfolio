@@ -30,14 +30,33 @@
   }
 
   .profile-img-container {
-    @apply w-72 h-72 relative perspective-1000
+    @apply w-72 h-72 relative perspective-1000 m-auto
   }
 
+  .animate-flip {
+    @apply w-full h-full absolute;
+    transform-style: preserve-3d;
+    transform-origin: center;
+  }
+
+  .animate-flip img {
+    @apply w-full h-full absolute top-0 left-0 backface-hidden;
+    
+  }
+
+  .front {
+    transform: rotateY(180deg);
+  }
+
+  .back {
+    z-index: 2;
+  }
+  
   .greeting-container {
     @apply mx-5 flex items-center
   }
 
-  .message-container p {
+  .message-container .message-line {
     @apply text-xl py-3 text-[#32312F];
 
     font-family: 'Carelia', sans-serif;

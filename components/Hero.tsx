@@ -1,26 +1,37 @@
 import { motion, useAnimation } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 
 const Hero = () => {
 
     const profileImgConfig = useAnimation();
-    const messageConfig = useAnimation()
+    const messageConfig = useAnimation();
+    const socialsConfig = useAnimation();
 
     const messageVariants = {
-        hidden: { opacity: 0, x: 20 },
+        hidden: { opacity: 0, x: 50 },
         visible: { opacity: 1, x: 0 }
     };
 
+    const socialVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                opacity: { duration: 0.5, ease: "easeInOut" },
+            }
+        }
+    };
+
     useEffect(() => {
-        
+
         async function onLoadSequence() {
 
             await Promise.all([
                 profileImgConfig.start({
                     scale: 1,
-                    transition: {type: "spring", stiffness: 300, damping: 20, mass: 1}
-                })
+                    transition: { type: "spring", stiffness: 300, damping: 20, mass: 1 }
+                }),
             ])
 
             await Promise.all([
@@ -28,7 +39,7 @@ const Hero = () => {
                 profileImgConfig.start({
                     x: 0,
                     rotateZ: -360,
-                    transition: {duration: 1, ease: "easeInOut"}
+                    transition: { duration: 1, ease: "easeInOut" }
                 }),
 
                 setTimeout(() => {
@@ -39,19 +50,21 @@ const Hero = () => {
             await Promise.all([
                 profileImgConfig.start({
                     x: 0,
-                    rotateY: 540,
-                    transition: {duration: 1, ease: "easeInOut"}
-                })
+                    rotateY: -180,
+                    transition: { duration: 0.5, ease: "easeOut" }
+                }),        
+                socialsConfig.start("visible")
+
             ])
 
         }
 
         onLoadSequence()
-    }, [profileImgConfig, messageConfig]);
+    }, [profileImgConfig, messageConfig, socialsConfig]);
 
 
     return (
-        <div className="home-container">
+        <div className="hero-wrapper">
             <div className='content-container'>
 
                 <div className='header-container'>
@@ -67,33 +80,33 @@ const Hero = () => {
 
                 <div className='profile-container'>
                     <div className='profile-img-container'>
-                        <motion.div
-                            className='animate-flip'
-                            initial={{ rotateY: 0, scale: 0, x: '100%' }}
-                            animate={profileImgConfig}
-                        >
-                            <Image
-                                className='front'
-                                src="/assets/Profile_Front.png"
-                                alt="ProfileFront"
-                                fill={true}
-                                loading='eager'
-                            />
-                            <Image
-                                className='back'
-                                src="/assets/Profile_Back.png"
-                                alt="ProfileBack"
-                                fill={true}
-                                loading='eager'
-                            />
-                        </motion.div>
+                            <motion.div
+                                className='animate-flip'
+                                initial={{ rotateY: 0, scale: 0, x: '120%' }}
+                                animate={profileImgConfig}
+                            >
+                                <Image
+                                    className='front'
+                                    src="/assets/Profile_Front.png"
+                                    alt="ProfileFront"
+                                    fill={true}
+                                    loading='eager'
+                                />
+                                <Image
+                                    className='back'
+                                    src="/assets/Profile_Back.png"
+                                    alt="ProfileBack"
+                                    fill={true}
+                                    loading='eager'
+                                />
+                            </motion.div>
                     </div>
                     <div className='greeting-container'>
-                        <motion.ul 
+                        <motion.ul
                             className='message-container'
                             initial="hidden"
                             animate={messageConfig}
-                            variants={{visible: { transition: { staggerChildren: 0.15 } } }}
+                            variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
                         >
                             <motion.li variants={messageVariants} className='-ml-4 message-line'>Hey There! My name is Justin, also known as, LevTheDev.</motion.li>
                             <motion.li variants={messageVariants} className='ml-1 message-line'>I'm a passionate Software Engineer who loves bringing ideas to life.</motion.li>
@@ -104,40 +117,52 @@ const Hero = () => {
                     </div>
                 </div>
 
-                <div className='socials-container'>
-                    <div className='icon-container' onClick={() => { window.open('https://www.github.com/JLevy18', "_blank") }}>
+                <motion.ul
+                    className='socials-container'
+                    initial="hidden"
+                    animate={socialsConfig}
+                    variants={{
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.25,
+                            }
+                        }
+                    }}
+
+                >
+                    <motion.li variants={socialVariants} className='icon-container' onClick={() => { window.open('https://www.github.com/JLevy18', "_blank") }}>
                         <Image
                             src="/assets/socials/github.svg"
                             alt="Github"
                             fill={true}
                             className='github'
                         />
-                    </div>
-                    <div className='icon-container' onClick={() => { window.open('https://www.linkedin.com/in/jlevy18/', "_blank") }}>
+                    </motion.li>
+                    <motion.li variants={socialVariants} className='icon-container' onClick={() => { window.open('https://www.linkedin.com/in/jlevy18/', "_blank") }}>
                         <Image
                             src="/assets/socials/linkedin.svg"
                             alt="Linkedin"
                             fill={true}
                             className='github'
                         />
-                    </div>
-                    <div className='icon-container' onClick={() => { window.open('https://www.youtube.com/channel/UCm3dXeDpEoPABhIPs9EkBrg', "_blank") }}>
+                    </motion.li>
+                    <motion.li variants={socialVariants} className='icon-container' onClick={() => { window.open('https://www.youtube.com/channel/UCm3dXeDpEoPABhIPs9EkBrg', "_blank") }}>
                         <Image
                             src="/assets/socials/youtube.svg"
                             alt="YouTube"
                             fill={true}
                             className='github'
                         />
-                    </div>
-                    <div className='icon-container' onClick={() => { window.open('https://www.patreon.com/LevTheDev', "_blank") }}>
+                    </motion.li>
+                    <motion.li variants={socialVariants} className='icon-container' onClick={() => { window.open('https://www.patreon.com/LevTheDev', "_blank") }}>
                         <Image
                             src="/assets/socials/patreon.svg"
                             alt="Patreon"
                             fill={true}
                             className='github'
                         />
-                    </div>
-                </div>
+                    </motion.li>
+                </motion.ul>
             </div>
         </div>
     )

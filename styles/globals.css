@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Carelia';
+  src: local('Carelia Upright'), local('Carelia-Upright'),
+    url('/fonts/Carelia-Upright.woff2') format('woff2'),
+    url('/fonts/Carelia-Upright.woff') format('woff'),
+    url('/fonts/Carelia-Upright.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer base {
 
   html {

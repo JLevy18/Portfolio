@@ -12,26 +12,30 @@
     font-style: normal;
 }
 
-.navbar-item {
-    font-family: 'Carelia', sans-serif;
-}
-
 .navbar-text::after {
     content: '';
     transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
 }
 
 @layer base {
+    .navbar-wrapper {
+        @apply fixed z-50 w-full h-[8%] flex justify-end px-16 mt-4
+    }
+
     .navbar-container {
-        @apply fixed z-50 w-full h-[8%] flex justify-end items-center px-16
+        @apply flex items-center py-1 rounded-lg shadow-md 
+
+        bg-[#ffffff1a] backdrop-blur-sm border-[1px] border-[#ffffff2c]
     }
 
     .navbar-item {
-        @apply text-2xl tracking-wider px-5 text-[#32312F]
+        @apply mx-3 pb-1;
     }
 
     .navbar-text {
-        @apply inline-block relative select-none
+        @apply text-xl tracking-wider font-bold text-[#32312F]
+        
+        inline-block relative select-none 
     }
 
     .navbar-text::after {
@@ -45,6 +49,19 @@
     .navbar-text:hover::after {
         width: 100%;
         left: 0;
+    }
+
+    .navbar-icon {
+        @apply drop-shadow-[0px_2px_2px_rgba(0,0,0,0.2)] ml-4 mr-2
+        transition-all ease-in-out
+    }
+
+    .navbar-icon:hover {
+        @apply cursor-pointer scale-110
+    }
+
+    .navbar-separator {
+        @apply w-2 h-2 bg-[#32312F] rounded-full mt-1 mx-1
     }
 
 }

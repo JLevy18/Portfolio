@@ -2,18 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'Carelia';
-  src: local('Carelia Upright'), local('Carelia-Upright'),
-    url('/fonts/Carelia-Upright.woff2') format('woff2'),
-    url('/fonts/Carelia-Upright.woff') format('woff'),
-    url('/fonts/Carelia-Upright.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @layer base {
-  .home-container {
+  .hero-wrapper {
     @apply relative h-screen w-full flex justify-center overflow-hidden
   }
 
@@ -40,7 +30,7 @@
   }
 
   .animate-flip img {
-    @apply w-full h-full absolute top-0 left-0 backface-hidden;
+    @apply w-full h-full absolute top-0 left-0 backface-hidden drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]
     
   }
 
@@ -51,6 +41,7 @@
   .back {
     z-index: 2;
   }
+  
   
   .greeting-container {
     @apply mx-5 flex items-center
@@ -67,14 +58,12 @@
   }
 
   .icon-container {
-    @apply w-14 h-14 relative mx-14 select-all transition-all ease-in-out
+    @apply w-14 h-14 relative mx-14 drop-shadow-md select-all transition-all ease-in-out
   }
 
   .icon-container:hover {
-    @apply scale-125 drop-shadow-md cursor-pointer
+    @apply scale-125 cursor-pointer
   }
 
-  .about-container {
-    @apply bg-[#867F6C] h-screen -my-20 rounded-t-3xl z-10
-  }
+
 }

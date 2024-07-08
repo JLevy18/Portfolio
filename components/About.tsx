@@ -40,7 +40,7 @@ const About = () => {
         };
 
         const calculateCoffeesBrewed = () => {
-            const startDate = new Date('2022-04-30');
+            const startDate = new Date('2022-04-30');  // Undergraduate Commencement Date
             const endDate = new Date();
             const weekdaysCount = countWeekdays(startDate, endDate);
             const totalCoffees = weekdaysCount * 2;

@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .blog-container {
+        @apply h-screen w-screen overflow-hidden flex flex-col justify-center items-center
+    }
+
+    .notify-construction-container {
+        @apply flex flex-col items-center
+    }
+
+    .notify-construction-icon-container {
+        @apply w-fit h-fit flex justify-center items-center drop-shadow-xl
+    }
+
+    .construction-text {
+        @apply flex flex-col items-center
+        
+        text-6xl text-stone-800 drop-shadow-sm;
+        
+        font-family: 'Carelia', sans-serif;
+    }
+
+    .construction-text p{
+        @apply rotate-90 py-5
+    }
+
+    .coming-soon-container {
+        @apply flex flex-col items-center gap-10
+    }
+
+    .coming-soon-container h1{
+        @apply text-3xl text-[#32312F] font-bold
+    }
+
+    .coming-soon-container button{
+        @apply text-xl text-[#EFECE5] bg-[#867F6C]
+        
+        font-semibold py-2 px-4 rounded-full border-2 border-[#32312F] drop-shadow-sm
+
+        transition-all ease-in-out duration-300
+    }
+
+    .coming-soon-container button:hover{
+        @apply drop-shadow-md scale-105
+    }
+    
+}

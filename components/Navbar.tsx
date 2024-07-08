@@ -1,11 +1,14 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { Link } from 'react-scroll';
 
 const Navbar = ({ show }) => {
 
+    const router = useRouter();
+
     const variants = {
-        hidden: { opacity: 0, y: -50 },
+        hidden: { opacity: 0, y: -70 },
         visible: { opacity: 1, y: 0 },
     };
 
@@ -24,7 +27,7 @@ const Navbar = ({ show }) => {
                         smooth={true}
                         to="hero-wrapper"
                     >
-                        <div className='navbar-icon'>
+                        <div className='navbar-icon' onClick={() => router.push('/')}>
                             <Image
                                 className='back'
                                 src="/assets/Profile_Black.png"
@@ -53,7 +56,7 @@ const Navbar = ({ show }) => {
                         </span>
                     </div>
                     <div className='navbar-separator' />
-                    <div className="navbar-item">
+                    <div className="navbar-item" onClick={() => router.push('/blog')}>
                         <span className="navbar-text">
                             Blog
                         </span>

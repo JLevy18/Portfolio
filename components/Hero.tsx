@@ -7,6 +7,7 @@ const Hero = () => {
     const profileImgConfig = useAnimation();
     const messageConfig = useAnimation();
     const socialsConfig = useAnimation();
+    const loadConfig = useAnimation();
 
     const messageVariants = {
         hidden: { opacity: 0, x: 50 },
@@ -57,9 +58,23 @@ const Hero = () => {
 
             ])
 
+            localStorage.setItem('loadSequenceShown', 'true');
+
         }
 
-        onLoadSequence()
+        const loadedOnce =  localStorage.getItem('loadSequenceShown') === 'true';
+        if (!loadedOnce) {
+            onLoadSequence()
+        } else {
+            profileImgConfig.set({
+                scale: 1,
+                x: 0,
+                rotateZ: -360,
+                rotateY: -180,
+            });
+            messageConfig.set("visible");
+            socialsConfig.set("visible");
+        }
     }, [profileImgConfig, messageConfig, socialsConfig]);
 
 

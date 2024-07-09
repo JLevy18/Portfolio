@@ -1,4 +1,3 @@
-import Navbar from '@components/Navbar';
 import { useRouter } from 'next/router';
 import { FaTools, FaHardHat, FaToolbox } from "react-icons/fa";
 

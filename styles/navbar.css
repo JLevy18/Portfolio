@@ -52,7 +52,7 @@
     }
 
     .navbar-icon {
-        @apply drop-shadow-[0px_2px_2px_rgba(0,0,0,0.2)] ml-4 mr-2
+        @apply select-none drop-shadow-[0px_2px_2px_rgba(0,0,0,0.2)] ml-4 mr-2
         transition-all ease-in-out
     }
 

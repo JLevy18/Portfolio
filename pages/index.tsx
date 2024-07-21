@@ -1,6 +1,7 @@
 import About from '@components/About';
 import Hero from '@components/Hero';
 import Navbar from '@components/Navbar';
+import Projects from '@components/Projects';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 
@@ -31,6 +32,7 @@ const App = () => {
       <main>
         <Hero />
         <About />
+        <Projects />
       </main>
 
     </div>

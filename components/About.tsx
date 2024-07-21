@@ -1,7 +1,9 @@
-import { FaCode, FaCoffee } from "react-icons/fa";
+import { FaCode, FaCoffee, FaGraduationCap } from "react-icons/fa";
 import { FaCodePullRequest } from "react-icons/fa6";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Timeline from "./Timeline/Timeline";
+import TimelineEvent from "./Timeline/TimelineEvent";
 
 const About = () => {
 
@@ -52,8 +54,19 @@ const About = () => {
         calculateCoffeesBrewed();
     }, []);
 
+    const timelineEvents = [
+        { icon: <FaGraduationCap style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "B.S. Computer Sciene", date: "2022-04-30", description: "Completed undergraduate studies at Ohio University" },
+        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
+        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
+        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
+        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
+        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
+        
+        // Add more events as needed
+    ];
+
     return (
-        <div className="about-wrapper shadow-top">
+        <div className="about-wrapper">
             <div className="stats-container">
                 <div className="stat-container">
 
@@ -81,9 +94,16 @@ const About = () => {
                 </div>
             </div>
 
-            <div className="timeline-container">
+            <div className="timeline-wrapper">
                 <div className="timeline-header-container">
-                    <h1><b>Lets</b><p>travel back in time...</p></h1>
+                    <h1><text>Lets</text><p>travel back in time...</p></h1>
+                </div>
+                <div className="timeline-container">
+                    <Timeline>
+                        {timelineEvents.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((event, index) => (
+                            <TimelineEvent key={index} {...event} />
+                        ))}
+                    </Timeline>
                 </div>
             </div>
 
@@ -105,7 +125,7 @@ function formatNumberWithCommas(num: number): string {
 function countWeekdays(startDate: Date, endDate: Date): number {
     let count = 0;
     const currentDate = new Date(startDate);
-    
+
     while (currentDate <= endDate) {
         const dayOfWeek = currentDate.getDay();
         if (dayOfWeek !== 0 && dayOfWeek !== 6) { // Not Sunday (0) or Saturday (6)

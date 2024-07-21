@@ -21,22 +21,28 @@ const fetchLinesInFile = async (username: string, repo: string, filePath: string
     return fileContent.split('\n').length;
 };
 
-const fetchLinesInRepo = async (username: string, repo: Repo, token: string): Promise<number> => {
-    const repoResponse = await axios.get<File[]>(`https://api.github.com/repos/${username}/${repo.name}/contents`, {
+const fetchLinesInDirectory = async (username: string, repo: string, directoryPath: string, token: string): Promise<number> => {
+    const dirResponse = await axios.get<File[]>(`https://api.github.com/repos/${username}/${repo}/contents/${directoryPath}`, {
         headers: {
             Authorization: `token ${token}`
         }
     });
-    
-    const files = repoResponse.data;
-    const lineCounts = await Promise.all(files.map(file => {
+
+    const files = dirResponse.data;
+    const lineCounts = await Promise.all(files.map(async (file) => {
         if (file.type === 'file') {
-            return fetchLinesInFile(username, repo.name, file.path, token);
+            return fetchLinesInFile(username, repo, file.path, token);
+        } else if (file.type === 'dir') {
+            return fetchLinesInDirectory(username, repo, file.path, token);
         }
-        return Promise.resolve(0);
+        return 0;
     }));
-    
+
     return lineCounts.reduce((total, count) => total + count, 0);
+};
+
+const fetchLinesInRepo = async (username: string, repo: Repo, token: string): Promise<number> => {
+    return fetchLinesInDirectory(username, repo.name, '', token);
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

@@ -58,23 +58,9 @@ const Hero = () => {
 
             ])
 
-            localStorage.setItem('loadSequenceShown', 'true');
-
         }
 
-        const loadedOnce =  localStorage.getItem('loadSequenceShown') === 'true';
-        if (!loadedOnce) {
-            onLoadSequence()
-        } else {
-            profileImgConfig.set({
-                scale: 1,
-                x: 0,
-                rotateZ: -360,
-                rotateY: -180,
-            });
-            messageConfig.set("visible");
-            socialsConfig.set("visible");
-        }
+        onLoadSequence()
     }, [profileImgConfig, messageConfig, socialsConfig]);
 
 

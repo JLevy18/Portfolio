@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .projects-wrapper {
+        @apply w-full h-fit bg-[#EFECE5] shadow-top-inset flex flex-col items-center justify-center;
+    }
+
+    .projects-container {
+        @apply w-full h-full my-10 flex flex-col items-center;
+    }
+
+    .projects-header-container {
+        @apply mt-8 text-[#32312F] select-none w-fit text-6xl text-center drop-shadow-md;
+        font-family: 'Carelia', sans-serif;
+    }
+
+    .projects-header-container h1 {
+        @apply flex items-center
+    }
+
+    .projects-header-container text {
+        @apply text-8xl -mt-8 mr-4;
+        font-feature-settings: 'ss02' 1;
+    }
+
+    .projects-header-container p {
+        @apply text-6xl ml-3;
+        font-feature-settings: 'ss02' 1;
+    }
+
+    .projects-grid-container {
+        @apply w-3/5 grid grid-cols-2 gap-20 my-20;
+    }
+
+    .gridCard {
+        @apply bg-[#867F6C] border-2 border-[#32312F] h-full rounded-3xl shadow-xl flex flex-col items-center justify-center;
+    }
+
+    .gridCard .title {
+        @apply text-stone-800 text-4xl font-bold drop-shadow-md my-4 select-none;
+
+        font-family: 'Carelia', sans-serif;
+    }
+
+    .gridCard .thumbnail {
+        @apply w-1/2 h-1/2 flex items-center justify-center overflow-hidden
+                my-4;
+    }
+
+    .gridCard .description {
+        @apply text-stone-800 font-semibold text-center px-10 select-none mt-4;
+    }
+
+    .gridCard .stack {
+        @apply mt-4 w-4/5 flex flex-wrap items-center justify-center;
+    }
+
+    .gridCard .stack .stack-icon {
+        @apply w-8 h-8 mx-8 mt-4 flex items-center justify-center select-none;
+    }
+
+    .gridCard .links {
+        @apply my-8 max-h-fit w-full flex items-center justify-center;
+    }
+
+    .gridCard .links .wrapper button {
+        @apply flex items-center gap-2 bg-[#9C836F] shadow-md rounded-full 
+        
+        py-2 px-4 border-2 border-[#EFECE5];
+    }
+
+    .gridCard .links .wrapper button p {
+        @apply font-bold text-[#32312F]
+    }
+
+    .gridCard .links .wrapper .link-icon {
+        @apply w-6 h-6 drop-shadow-md;
+    }
+}
+
+@layer utilities {
+    .shadow-top-inset {
+        box-shadow: inset 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+}

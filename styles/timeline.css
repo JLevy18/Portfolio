@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+    .timeline-container{
+        @apply flex justify-center my-20 
+    }
+
+    .timeline {
+        @apply w-4/5 grid place-items-center;
+
+        grid-template-columns: max-content auto max-content auto max-content auto;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+            "event1 line1 event2 line2 event3 line3"
+            "event6 line5 event5 line4 event4 line3";
+    }
+
+    .timeline-item:nth-child(6) {
+        grid-area: line3;
+    }
+
+    .timeline-line {
+        @apply bg-[#EFECE5] w-full h-0.5
+    }
+
+    .timeline-event {
+        @apply min-w-20 h-20 rounded-full bg-[#9C836F] border-2 flex items-center justify-center shadow-xl
+    }
+
+    .timeline-icon-container {
+        @apply w-12 h-12
+    }
+
+}

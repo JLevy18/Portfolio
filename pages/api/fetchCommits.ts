@@ -6,16 +6,34 @@ interface Repo {
 }
 
 const fetchCommitsInRepo = async (username: string, repo: Repo, token: string): Promise<number> => {
-    const commitResponse = await axios.get(`https://api.github.com/repos/${username}/${repo.name}/commits`, {
-        headers: {
-            Authorization: `token ${token}`
-        },
-        params: {
-            per_page: 100
-        }
-    });
+    let totalCommits = 0;
+    let page = 1;
+    const per_page = 100;
 
-    return commitResponse.data.length;
+    while (true) {
+        try {
+            const commitResponse = await axios.get(`https://api.github.com/repos/${username}/${repo.name}/commits`, {
+                headers: {
+                    Authorization: `token ${token}`
+                },
+                params: {
+                    per_page,
+                    page
+                }
+            });
+
+            const commits = commitResponse.data;
+            totalCommits += commits.length;
+
+            if (commits.length < per_page) break;
+            page++;
+        } catch (error) {
+            console.error(`Error fetching commits for repo ${repo.name}:`, error);
+            break;
+        }
+    }
+
+    return totalCommits;
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -38,7 +56,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
                 },
                 params: {
                     per_page,
-                    page
+                    page,
                 }
             });
 

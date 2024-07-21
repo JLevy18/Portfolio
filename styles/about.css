@@ -5,7 +5,9 @@
 @layer base {
 
     .about-wrapper {
-        @apply bg-[#867F6C] h-screen -my-20 rounded-t-3xl z-10 flex flex-col items-center
+        @apply bg-[#867F6C] h-fit rounded-t-3xl z-10 flex flex-col items-center 
+        
+        shadow-top border-b-2 border-[#32312F]
     }
 
     .stats-container {
@@ -32,26 +34,26 @@
     }
 
 
-    .timeline-container {
+    .timeline-wrapper {
         @apply flex flex-col w-full
     }
 
     .timeline-header-container {
-        @apply text-stone-800 ml-36 my-10 select-none;    
+        @apply text-stone-800 ml-36 my-10 select-none drop-shadow-md;    
         font-family: 'Carelia', sans-serif;
     }
 
     .timeline-header-container h1 {
-        @apply flex gap-4 text-5xl
+        @apply flex gap-4 text-6xl
     }
 
-    .timeline-header-container b {
+    .timeline-header-container text {
         @apply text-8xl;
         font-feature-settings: 'ss02' 1;
     }
 
     .timeline-header-container p{
-        @apply mt-12
+        @apply mt-[2.15rem]
     }
 
 

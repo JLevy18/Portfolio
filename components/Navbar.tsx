@@ -50,11 +50,17 @@ const Navbar = ({ show }) => {
                         </div>
                     </Link>
                     <div className='navbar-separator' />
-                    <div className="navbar-item">
-                        <span className="navbar-text">
-                            Portfolio
-                        </span>
-                    </div>
+                    <Link
+                        activeClass="active"
+                        smooth={true}
+                        to="projects-wrapper"
+                    >
+                        <div className="navbar-item">
+                            <span className="navbar-text">
+                                Portfolio
+                            </span>
+                        </div>
+                    </Link>
                     <div className='navbar-separator' />
                     <div className="navbar-item" onClick={() => router.push('/blog')}>
                         <span className="navbar-text">

@@ -5,6 +5,7 @@ import '@styles/about.css'
 import '@styles/blog.css'
 import '@styles/timeline.css'
 import '@styles/projects.css'
+import '@styles/contact.css'
 import React from 'react'
 
 function Application({ Component, pageProps }) {

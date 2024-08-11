@@ -18,5 +18,15 @@
     @apply bg-[#EFECE5]
   }
 
+  /* Footer */
+
+  .footer-wrapper {
+    @apply flex w-full bottom-0 max-h-fit justify-between bg-[#867F6C] border-t border-[#32312F]
+  }
+
+  .footer-wrapper .copyright{
+    @apply m-auto text-[#32312F] py-2 
+  }
+
 
 }

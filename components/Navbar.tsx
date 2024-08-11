@@ -68,11 +68,17 @@ const Navbar = ({ show }) => {
                         </span>
                     </div>
                     <div className='navbar-separator' />
-                    <div className="navbar-item">
-                        <span className="navbar-text">
-                            Contact
-                        </span>
-                    </div>
+                    <Link
+                        activeClass="active"
+                        smooth={true}
+                        to="contact-wrapper"
+                    >
+                        <div className="navbar-item">
+                            <span className="navbar-text">
+                                Contact
+                            </span>
+                        </div>
+                    </Link>
                 </div>
 
             </motion.nav>

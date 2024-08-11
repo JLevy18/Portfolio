@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .contact-wrapper {
+        @apply w-full h-fit flex justify-center m-20
+    }
+
+    .contact-message-container {
+        @apply text-[#32312F] mr-52;
+        font-family: 'Carelia', sans-serif;
+    }
+
+    .contact-message-container h1 {
+        @apply flex items-center mb-16;
+    }
+
+    .contact-message-container p {
+        @apply text-xl text-center tracking-wide my-2;
+    }
+
+    .contact-message-container text {
+        @apply text-8xl -mt-8;
+        font-feature-settings: 'ss02' 1;
+    }
+
+    .contact-message-container span {
+        @apply text-6xl ml-3;
+    }
+
+    .contact-form-container {
+        @apply bg-[#867F6C] px-12 py-4 rounded-2xl w-1/3 border-[#32312F] border-2 shadow-md
+    }
+
+    .contact-form {
+        @apply flex flex-col gap-3 items-center
+    }
+
+    .contact-form h1 {
+        @apply text-3xl text-center text-stone-800;
+        font-family: 'Carelia', sans-serif;
+    }
+
+    .contact-form input {
+        @apply bg-[#EFECE5] rounded px-2 py-1 w-full
+    }
+
+    .contact-form textarea {
+        @apply bg-[#EFECE5] rounded px-2 py-1 w-full
+    }
+
+    .contact-form button {
+        @apply bg-[#9C836F] shadow-md rounded-full px-4 py-1 w-fit border-2 border-[#EFECE5] text-[#32312F] font-bold
+    }
+
+    /* 
+    *
+    *   FORM RESPONSE STLYES
+    *
+    */
+
+
+    #response {
+        @apply fixed bottom-0 left-0 z-[999] h-[8%] w-full transition-all duration-500
+    }
+
+    #response.default {
+        @apply translate-y-32
+    }
+
+    #response.success {
+        @apply bg-green-600
+    }
+
+    #response.warning {
+        @apply bg-yellow-600
+    }
+
+    #response.error {
+        @apply bg-red-600
+    }
+
+    /* Response Content */
+    #response .success, #response .warning, #response .error {
+        @apply hidden
+    }
+
+    #response .success.active, #response .warning.active, #response .error.active {
+        @apply flex min-h-full justify-center items-center
+    }
+
+}

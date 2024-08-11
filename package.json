@@ -8,6 +8,8 @@
     "export": "next export"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
+    "@hcaptcha/react-hcaptcha": "^1.10.3",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
     "framer-motion": "^11.2.13",

@@ -16,12 +16,13 @@ interface ProjectCardProps {
     thumbnailSrc?: string;
     viewLink?: string;
     sourceLink?: string;
+    style?: React.CSSProperties;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, stackIcons, thumbnailSrc, viewLink, sourceLink }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, stackIcons, thumbnailSrc, viewLink, sourceLink, style }) => {
 
     return (
-        <div className='gridCard' id={id}>
+        <div className='gridCard' id={id} style={style}>
             <div className='title'>
                 <h2>{title}</h2>
                 <div className='seperator' />

@@ -34,10 +34,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, stack
                             className='thumbnail-icon'
                             src={thumbnailSrc}
                             alt={`${title} thumbnail`}
-                            layout="responsive"
-                            width={100}
-                            height={100}
-                            objectFit="contain"
+                            width={0}
+                            height={0}
+                            sizes='100vw'
                         />
                     </div>
                 )}

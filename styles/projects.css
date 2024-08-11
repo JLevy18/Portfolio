@@ -39,9 +39,15 @@
     }
 
     .carousel-button {
-        @apply rounded-full w-fit text-center p-4
+        @apply rounded-full w-fit text-center p-3
+
+        transition-all ease-in-out
         
         bg-[#9C836F] shadow-lg text-stone-800 font-semibold border-2 border-[#32312F];
+    }
+
+    .carousel-button:hover {
+        @apply scale-[120%]
     }
 
     .gridCard {

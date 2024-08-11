@@ -56,6 +56,48 @@
         @apply mt-[2.15rem]
     }
 
+    .timeline-container {
+        @apply w-full h-[50vh] flex items-center justify-center relative overflow-hidden
+    }
+
+    .timeline-line {
+        @apply w-full h-0.5 bg-[#EFECE5] absolute
+    }
+
+    .years-scroll-container {
+        @apply w-full h-full overflow-x-scroll relative px-32 outline-none;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .years-scroll-container::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, and Opera */
+      }
+
+    .years-container {
+        @apply relative min-w-max w-full h-full flex items-center justify-between pointer-events-none;
+    }
+
+    .year-container {
+        @apply relative flex items-center justify-center;
+    }
+
+    .year-dot {
+        @apply w-3 h-3 absolute bg-[#EFECE5] rounded-full
+    }
+
+    .year-label {
+        @apply text-[#EFECE5] absolute whitespace-nowrap font-semibold
+    }
+
+    .top .year-label {
+        @apply -top-8
+    }
+
+    .bottom .year-label {
+        @apply top-2
+    }
+
 
 }
 

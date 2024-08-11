@@ -2,8 +2,7 @@ import { FaCode, FaCoffee, FaGraduationCap } from "react-icons/fa";
 import { FaCodePullRequest } from "react-icons/fa6";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Timeline from "./Timeline/Timeline";
-import TimelineEvent from "./Timeline/TimelineEvent";
+import Timeline from "./Timeline";
 
 const About = () => {
 
@@ -54,16 +53,6 @@ const About = () => {
         calculateCoffeesBrewed();
     }, []);
 
-    const timelineEvents = [
-        { icon: <FaGraduationCap style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "B.S. Computer Sciene", date: "2022-04-30", description: "Completed undergraduate studies at Ohio University" },
-        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
-        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
-        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
-        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
-        { icon: <FaCode style={{ width: '100%', height: '100%', color: "#EFECE5" } }/>, label: "First Project", date: "2018-08-15", description: "Completed my first project." },
-        
-        // Add more events as needed
-    ];
 
     return (
         <div className="about-wrapper">
@@ -98,13 +87,7 @@ const About = () => {
                 <div className="timeline-header-container">
                     <h1><text>Lets</text><p>travel back in time...</p></h1>
                 </div>
-                <div className="timeline-container">
-                    <Timeline>
-                        {timelineEvents.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()).map((event, index) => (
-                            <TimelineEvent key={index} {...event} />
-                        ))}
-                    </Timeline>
-                </div>
+                <Timeline startYear={2015} endYear={2025}/>
             </div>
 
         </div>

@@ -87,7 +87,7 @@ const About = () => {
                 <div className="timeline-header-container">
                     <h1><text>Lets</text><p>travel back in time...</p></h1>
                 </div>
-                <Timeline startYear={2015} endYear={2025}/>
+                <Timeline startYear={2015} />
             </div>
 
         </div>

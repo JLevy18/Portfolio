@@ -14,13 +14,25 @@ const Contact = () => {
     const [formResponseSuccess, setResponseSuccess] = useState(false);
     const [formResponseWarning, setResponseWarning] = useState(false);
     const [formResponseError, setResponseError] = useState(false);
+    const [warningMessage, setWarningMessage] = useState('');
 
 
     const sendEmail = (e) => {
         e.preventDefault();
 
+        const email = form.current.user_email.value;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+        if (!emailRegex.test(email)) {
+            setResponseState('warning');
+            setWarningMessage("Email format is not valid!");
+            setResponseWarning(true);
+            return;
+        }
+
         if (!token) {
             setResponseState('warning');
+            setWarningMessage("Human verification is required to send a message!");
             setResponseWarning(true);
             return;
         }
@@ -79,7 +91,7 @@ const Contact = () => {
                     <p>Your message was sent successfully, we will be in touch soon!</p>
                 </div>
                 <div className={formResponseWarning ? 'warning active' : 'warning'}>
-                    <p><b>Warning: </b> Human verification is required to send a message!</p>
+                    <p><b>Warning: </b> {warningMessage}</p>
                 </div>
                 <div className={formResponseError ? 'error active' : 'error'}>
                     <p><b>Error: </b> Something went wrong and your message wasn't sent. Please try again in a few minutes.</p>

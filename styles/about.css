@@ -75,7 +75,7 @@
       }
 
     .years-container {
-        @apply relative min-w-max w-full h-full flex items-center justify-between pointer-events-none;
+        @apply relative min-w-max w-full h-full flex items-center justify-between;
     }
 
     .year-container {
@@ -87,17 +87,30 @@
     }
 
     .year-label {
-        @apply text-[#EFECE5] absolute whitespace-nowrap font-semibold
+        @apply text-[#EFECE5] absolute whitespace-nowrap font-semibold select-none
     }
 
     .top .year-label {
-        @apply -top-8
+        @apply -top-12
     }
 
     .bottom .year-label {
-        @apply top-2
+        @apply top-6
     }
 
+    .event-container {
+        @apply absolute -translate-x-1/2 transition-all ease-in-out
+    }
+
+    .event-container:hover {
+        @apply cursor-pointer scale-110
+    }
+
+    .event-icon-container {
+        @apply flex items-center justify-center w-12 h-12
+
+        bg-[#9C836F] rounded-full border-2 border-[#EFECE5]
+    }
 
 }
 

@@ -1,5 +1,5 @@
 // ProjectCard.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { FaCode } from 'react-icons/fa';
 
@@ -16,13 +16,47 @@ interface ProjectCardProps {
     thumbnailSrc?: string;
     viewLink?: string;
     sourceLink?: string;
+    versions?: number[];
     style?: React.CSSProperties;
+    onVersionChange?: (version: number) => void;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, description, stackIcons, thumbnailSrc, viewLink, sourceLink, style }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({
+    id,
+    title,
+    description,
+    stackIcons,
+    thumbnailSrc,
+    viewLink,
+    sourceLink,
+    versions = [1],
+    onVersionChange,
+    style }) => {
+
+    const [selectedVersion, setSelectedVersion] = useState(1);
+
+    const handleVersionChange = (version: number) => {
+        setSelectedVersion(version);
+        if (onVersionChange) {
+            onVersionChange(version);
+        }
+    };
 
     return (
         <div className='gridCard' id={id} style={style}>
+            {versions.length > 1 && (
+                <div className='version-selector'>
+                    {versions.map(version => (
+                        <button
+                            key={version}
+                            className={`version-button ${version === selectedVersion ? 'active' : ''}`}
+                            onClick={() => handleVersionChange(version)}
+                        >
+                            v{version}
+                        </button>
+                    ))}
+                </div>
+            )}
             <div className='title'>
                 <h2>{title}</h2>
                 <div className='seperator' />

@@ -110,7 +110,7 @@ const projectsData: Project[] = [
                     { src: '/assets/stack/spring.svg', alt: 'Spring' },
                 ],
                 thumbnailSrc: '/assets/thumbnails/BudgetBites.png',
-                viewLink: 'https://google.com',
+                viewLink: '',
                 sourceLink: '',
             }
         ]

@@ -7,7 +7,7 @@ const Hero = () => {
     const profileImgConfig = useAnimation();
     const messageConfig = useAnimation();
     const socialsConfig = useAnimation();
-    const loadConfig = useAnimation();
+    const headerConfig = useAnimation();
 
     const messageVariants = {
         hidden: { opacity: 0, x: 50 },
@@ -29,6 +29,10 @@ const Hero = () => {
         async function onLoadSequence() {
 
             await Promise.all([
+                headerConfig.start({
+                    clipPath: "inset(0% 0% 0% 0%)", // Fully revealed
+                    transition: { duration: 1.5, ease: "easeInOut" }
+                }),
                 profileImgConfig.start({
                     scale: 1,
                     transition: { type: "spring", stiffness: 300, damping: 20, mass: 1 }
@@ -53,7 +57,7 @@ const Hero = () => {
                     x: 0,
                     rotateY: -180,
                     transition: { duration: 0.5, ease: "easeOut" }
-                }),        
+                }),
                 socialsConfig.start("visible")
 
             ])
@@ -61,14 +65,18 @@ const Hero = () => {
         }
 
         onLoadSequence()
-    }, [profileImgConfig, messageConfig, socialsConfig]);
+    }, [profileImgConfig, messageConfig, socialsConfig, headerConfig]);
 
 
     return (
         <div className="hero-wrapper">
             <div className='content-container'>
 
-                <div className='header-container'>
+                <motion.div
+                    className='header-container'
+                    initial={{ clipPath: "inset(0% 50% 0% 50%)" }}
+                    animate={headerConfig}
+                >
                     <Image
                         src="/assets/Header.png"
                         alt="Title"
@@ -77,30 +85,30 @@ const Hero = () => {
                         loading='eager'
                         className='object-contain drop-shadow-md'
                     />
-                </div>
+                </motion.div>
 
                 <div className='profile-container'>
                     <div className='profile-img-container'>
-                            <motion.div
-                                className='animate-flip'
-                                initial={{ rotateY: 0, scale: 0, x: '120%' }}
-                                animate={profileImgConfig}
-                            >
-                                <Image
-                                    className='front'
-                                    src="/assets/Profile_Front.png"
-                                    alt="ProfileFront"
-                                    fill={true}
-                                    loading='eager'
-                                />
-                                <Image
-                                    className='back'
-                                    src="/assets/Profile_Back.png"
-                                    alt="ProfileBack"
-                                    fill={true}
-                                    loading='eager'
-                                />
-                            </motion.div>
+                        <motion.div
+                            className='animate-flip'
+                            initial={{ rotateY: 0, scale: 0, x: '120%' }}
+                            animate={profileImgConfig}
+                        >
+                            <Image
+                                className='front'
+                                src="/assets/Profile_Front.png"
+                                alt="ProfileFront"
+                                fill={true}
+                                loading='eager'
+                            />
+                            <Image
+                                className='back'
+                                src="/assets/Profile_Back.png"
+                                alt="ProfileBack"
+                                fill={true}
+                                loading='eager'
+                            />
+                        </motion.div>
                     </div>
                     <div className='greeting-container'>
                         <motion.ul

@@ -56,57 +56,62 @@ const About = () => {
 
     const events = [
         {
-            date: new Date(2015, 10, 31),
+            date: new Date(2015, 10 - 1),
             icon: FaLaptopCode,
             description: 'First time coding',
         },
         {
-            date: new Date(2018, 5, 30),
+            date: new Date(2018, 5 - 1),
             icon: FaGraduationCap,
             description: 'High School Graduation',
         },
         {
-            date: new Date(2017, 2, 20),
+            date: new Date(2017, 2 - 1),
             icon: FaDesktop,
             description: 'Building my first computer',
         },
         {
-            date: new Date(2017, 10, 20),
+            date: new Date(2017, 10 - 1),
             icon: FaMicrochip,
             description: 'Used a raspberry pi to build a bus monitor system',
         },
         {
-            date: new Date(2022, 4, 31),
+            date: new Date(2022, 4 - 1),
             icon: FaUniversity,
             description: 'B.S. Computer Science and Engineering Earned',
         },
         {
-            date: new Date(2016, 8, 25),
+            date: new Date(2016, 8 - 1),
             icon: FaSchool,
             description: 'Entered vocational school for Information Technology and Programming',
         },
         {
-            date: new Date(2019, 9, 25),
+            date: new Date(2018, 8 - 1),
+            icon: FaSchool,
+            description: 'Began studying Computer Science and Engineering at Ohio University',
+        },
+        {
+            date: new Date(2019, 9 - 1),
             icon: FaRocket,
             description: 'Began learning C++',
         },
         {
-            date: new Date(2021, 5, 31),
+            date: new Date(2021, 5 - 1),
             icon: FaHeadset,
             description: 'Technical Support Intern @FIT Technologies',
         },
         {
-            date: new Date(2022, 6, 1),
+            date: new Date(2022, 6 - 1),
             icon: FaCodeBranch,
             description: 'Training in Spring Boot and RESTful APIs',
         },
         {
-            date: new Date(2023, 1, 21),
+            date: new Date(2023, 1 - 1),
             icon: FaServer,
             description: 'Began working as a Backend Web Software Engineer',
         },
         {
-            date: new Date(2024, 2, 20),
+            date: new Date(2024, 2 - 1),
             icon: FaLightbulb,
             description: 'Continued self-learning popular frameworks on side projects',
         },

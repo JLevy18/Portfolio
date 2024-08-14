@@ -15,9 +15,8 @@
 @layer base {
 
   html {
-    @apply bg-[#EFECE5]
+    @apply bg-[#EFECE5] absolute
   }
-
   /* Footer */
 
   .footer-wrapper {

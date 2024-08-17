@@ -12,12 +12,12 @@
     }
 
     .projects-header-container {
-        @apply mt-8 text-[#32312F] select-none w-fit text-6xl text-center drop-shadow-md;
+        @apply mt-8 -ml-6 text-[#32312F] select-none w-fit text-6xl text-center drop-shadow-md;
         font-family: 'Carelia', sans-serif;
     }
 
     .projects-header-container h1 {
-        @apply flex items-center
+        @apply flex items-center pl-6
     }
 
     .projects-header-container span {

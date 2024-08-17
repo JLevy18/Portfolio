@@ -108,6 +108,10 @@ const Timeline: React.FC<TimelineProps> = ({ startYear, events }) => {
                     onMouseDown={() => startScrolling('left')}
                     onMouseUp={stopScrolling}
                     onMouseLeave={stopScrolling}
+                    onTouchStart={() => startScrolling('left')}
+                    onTouchEnd={stopScrolling}
+                    onTouchCancel={stopScrolling}
+                    onContextMenu={(e) => e.preventDefault()}
                 >
                     <FaArrowLeft style={{ color: "#32312F" }} />
                 </div>
@@ -116,6 +120,10 @@ const Timeline: React.FC<TimelineProps> = ({ startYear, events }) => {
                     onMouseDown={() => startScrolling('right')}
                     onMouseUp={stopScrolling}
                     onMouseLeave={stopScrolling}
+                    onTouchStart={() => startScrolling('right')}
+                    onTouchEnd={stopScrolling}
+                    onTouchCancel={stopScrolling}
+                    onContextMenu={(e) => e.preventDefault()}
                 >
                     <FaArrowRight style={{ color: "#32312F" }} />
                 </div>

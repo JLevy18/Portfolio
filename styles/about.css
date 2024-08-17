@@ -44,7 +44,7 @@
     }
 
     .timeline-header-container h1 {
-        @apply flex gap-4 text-6xl overflow-visible
+        @apply flex gap-4 text-6xl pl-2
     }
 
     .timeline-header-container text {

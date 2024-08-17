@@ -15,7 +15,7 @@
 @layer base {
 
   html {
-    @apply bg-[#EFECE5] absolute
+    @apply bg-[#EFECE5] max-w-full
   }
   /* Footer */
 

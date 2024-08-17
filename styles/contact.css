@@ -90,4 +90,57 @@
         @apply flex min-h-full justify-center items-center
     }
 
+    @media screen and (max-width: 1440px) {
+        .contact-message-container {
+            @apply mr-16
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+
+        .contact-wrapper {
+            @apply flex-col items-center gap-12
+        }
+
+        .contact-message-container {
+            @apply mr-0 mt-12
+        }
+
+        .contact-form-container {
+            @apply w-2/3
+        }
+
+    }
+
+    @media screen and (max-width: 700px) {
+
+        .contact-message-container h1 {
+            @apply justify-center mb-12
+        }
+
+        .contact-message-container text {
+            @apply text-5xl
+        }
+
+        .contact-message-container span {
+            @apply text-3xl -mt-4 ml-2
+        }
+
+        .contact-message-container p {
+            @apply text-base
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+
+        .contact-wrapper {
+            @apply my-4
+        }
+
+        .contact-form-container {
+            @apply w-11/12 px-4
+        }
+
+    }
+
 }

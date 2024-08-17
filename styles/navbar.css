@@ -64,4 +64,19 @@
         @apply w-2 h-2 bg-[#32312F] rounded-full mt-1 mx-1
     }
 
+    @media screen and (max-width: 600px) {
+        .navbar-wrapper {
+            @apply px-2 justify-center
+        }
+
+        .navbar-item {
+            @apply pb-0 mx-1
+        }
+
+        .navbar-text {
+            @apply text-base
+        }
+        
+    }
+
 }

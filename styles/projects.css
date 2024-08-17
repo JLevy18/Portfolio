@@ -31,7 +31,7 @@
     }
 
     .projects-carousel-container {
-        @apply w-full h-4/5 relative flex items-center justify-center my-12;
+        @apply w-full h-4/5 relative flex items-center justify-center mt-20 2xl:mt-12;
     }
 
     .carousel-button-container {
@@ -104,14 +104,81 @@
         @apply absolute top-0 left-0 m-4 flex gap-2
     }
 
-    .version-button{
+    .version-button {
         @apply bg-[#9C836F] px-3 py-1 rounded-md border border-[#EFECE5] 
         
         opacity-50 font-semibold text-sm
     }
 
-    .version-button.active{
+    .version-button.active {
         @apply bg-[#9C836F] px-3 py-1 rounded-md border-2 border-[#EFECE5] opacity-100
+    }
+
+    @media screen and (max-width: 950px) {
+        .gridCard .stack {
+            @apply w-full
+        }
+
+        .gridCard .links .wrapper button p {
+            @apply text-sm
+        }
+
+        .gridCard .links .wrapper .link-icon {
+            @apply w-4 h-4;
+        }
+
+        .projects-header-container h1 {
+            @apply text-4xl
+        }
+
+        .projects-header-container span {
+            @apply text-5xl -mt-2 mr-2;
+        }
+
+        .projects-header-container p {
+            @apply text-4xl ml-2;
+        }
+
+        .projects-carousel-container {
+            @apply mt-10
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .gridCard .stack .stack-icon {
+            @apply mx-4
+        }
+
+        .gridCard .links .wrapper button p {
+            @apply text-xs
+        }
+
+        .gridCard .description {
+            @apply text-sm
+        }
+    }
+
+    @media screen and (max-width: 425px) {
+
+        .projects-wrapper {
+            @apply overflow-clip
+        }
+
+        .gridCard {
+            @apply w-11/12
+        }
+
+        .projects-header-container h1 {
+            @apply text-3xl
+        }
+
+        .projects-header-container span {
+            @apply text-4xl mt-[0.05rem]
+        }
+
+        .projects-header-container p {
+            @apply text-3xl
+        }
     }
 
 }

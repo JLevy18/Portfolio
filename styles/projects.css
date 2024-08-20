@@ -168,6 +168,10 @@
             @apply w-11/12
         }
 
+        .gridCard .title {
+            @apply text-3xl
+        }
+
         .projects-header-container h1 {
             @apply text-3xl
         }

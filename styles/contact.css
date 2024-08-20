@@ -141,6 +141,10 @@
             @apply w-11/12 px-4
         }
 
+        .contact-message-container p {
+            @apply text-sm
+        }
+
     }
 
 }

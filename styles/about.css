@@ -267,6 +267,39 @@
         .timeline-header-container h1 {
             @apply gap-1
         }
+
+        .timeline-header-container text {
+            @apply text-4xl
+        }
+
+        .timeline-header-container p {
+            @apply text-2xl mt-[0.65rem]
+        }
+
+        .stat-container {
+            @apply w-28 h-28
+        }
+
+        .stat-icon-container {
+            @apply w-10 h-10
+        }
+
+        .stat-container h1 {
+            @apply text-xs
+        }
+
+        .stat-container h2 {
+           font-size: 0.6rem;
+        }
+
+        .event-icon-container {
+            @apply w-10 h-10
+        }
+
+        .event-description  {
+            @apply text-sm
+        }
+        
     }
 
 

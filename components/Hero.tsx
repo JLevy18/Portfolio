@@ -121,7 +121,7 @@ const Hero = () => {
                             <motion.li variants={messageVariants} className='ml-1 message-line'>I'm a passionate Software Engineer who loves bringing ideas to life.</motion.li>
                             <motion.li variants={messageVariants} className='ml-3 message-line'>When I'm not working, you can find me enjoying various online games</motion.li>
                             <motion.li variants={messageVariants} className='ml-1 message-line'>with friends or exploring one of my many project ideas. You can follow</motion.li>
-                            <motion.li variants={messageVariants} className='-ml-4 message-line'>the development of my projects as they progress on YouTube!</motion.li>
+                            <motion.li variants={messageVariants} className='-ml-4 message-line'>the development of some of my projects on YouTube!</motion.li>
                         </motion.ul>
                     </div>
                 </div>

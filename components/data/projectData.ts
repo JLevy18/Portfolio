@@ -97,24 +97,7 @@ const projectsData: Project[] = [
                 sourceLink: 'https://github.com/JLevy18/portfolio',
             }
         ]
-    },
-    {
-        id: 'budgetbites',
-        title: 'BudgetBites',
-        description: "BudgetBites is a meal planning and grocery list application. It aims to help users save time, money, and reduce food waste, by providing them with meal plans and grocery lists based on their budget and their existing pantry inventory.",
-        versions: [
-            {
-                version: '1',
-                stackIcons: [
-                    { src: '/assets/stack/git.svg', alt: 'Git' },
-                    { src: '/assets/stack/spring.svg', alt: 'Spring' },
-                ],
-                thumbnailSrc: '/assets/thumbnails/BudgetBites.png',
-                viewLink: '',
-                sourceLink: '',
-            }
-        ]
-    },
+    }
 ];
 
 export default projectsData;
